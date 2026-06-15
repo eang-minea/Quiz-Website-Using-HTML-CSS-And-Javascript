@@ -1,92 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Quiz Website HMTL CSS JS </title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Arena 3D</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <main class="main">
-        <header class="header">
-            <a href="#" class="logo"> Quiz .</a>
-            <nav class="navbar">
-                <a href="#" class="active"> Home </a>
-                <a href="#"> About </a>  
-                <a href="#"> Services </a>   
-                <a href="#"> Contact </a>
 
-            </nav>
-            </nav>
-        </header>
+  <!-- Three.js Background -->
+  <div id="bg-canvas"></div>
 
-        <div class="container">
-            <section class="quiz-section">
-                
-                <div class="quiz-box">
-                    <h1>Codehal Quiz</h1>
-                    <div class="quiz-header">
-                        <span>Quiz Website Tutorial</span>
-                        <span class="header-score">Score: 0 / 5</span>
-                    </div>
+  <!-- Floating Glow -->
+  <div class="glow glow1"></div>
+  <div class="glow glow2"></div>
+  <div class="glow glow3"></div>
 
-                    <h2 class="question-text">What does HTML stand for?</h2>
+  <!-- MENU -->
+  <section class="menu active">
 
-                    <div class="option-list">
-                        <div class="option">
-                           <span>A. Hyper Text Multi Language</span>
-                        </div>
-                        <div class="option">
-                           <span>B. Hyper Text Multiple Language</span>
-                        </div>
-                        <div class="option">
-                           <span>C. Hyper Text Markup Language</span>
-                        </div>
-                        <div class="option">
-                           <span>D. Home Text Multi Language </span>
-                        </div>
-                    </div>
+    <div class="card">
 
-                    <div class="quiz-footer">
-                        <span class="question-total">1 of 5</span>
-                        <button class="next-btn">Next</button>
-                    </div>
+      <div class="logo">🚀</div>
 
-                </div>
+      <h1>Quiz Arena</h1>
 
-            </section>
-            
-            <section class="home">
-                <div class="home-content">
-                    <h1> Quiz Website </h1>
-                    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vulputate lacus ac libero faucibus viverra. 
-                        Suspendisse porta quam vel massa aliquet,  ut sodales enim blandit. Fusce ac quam pellentesque, 
-                        imperdiet est porttitor</p>
-                        <button class="start-btn"> Start Quiz </button>
-                </div>
+      <p>
+        Test your knowledge in a futuristic
+        3D experience.
+      </p>
 
-            </section>
-
-        </div>
-    </main>
-
-
-    <div class="popup-info">
-        <h2> Quiz Guide </h2>
-        <span class="info">1, Lorem ipsum dolor sit amet ac  faucibus viverra. </span>
-        <span class="info">2, Lorem ipsum dolor sit amet ac libero  viverra. </span>
-        <span class="info">3, Lorem ipsum  sit amet ac libero faucibus viverra. </span>
-        <span class="info">4, Lorem dolor sit amet ac libero faucibus viverra  </span>
-        <span class="info">5, Lorem ipsum dolor sit amet ac  faucibus viverra. </span>
-
-        <div class="btn-group">
-            <button class="info-btn exit-btn" > Exit Quiz </button>
-            <a href="#" class="info-btn continue-btn"> Continue </a>
-        </div>
+      <button class="play">
+        Start Quiz
+      </button>
 
     </div>
-    
-    <script src="question.js"></script>
-    <script src="script.js"></script>
+
+  </section>
+
+  <!-- QUIZ -->
+  <section class="quiz">
+
+    <div class="card quiz-card">
+
+      <div class="top">
+
+        <span class="progress-text">
+          1 / 10
+        </span>
+
+        <span class="score">
+          ⭐ 0
+        </span>
+
+      </div>
+
+      <div class="progress-wrap">
+        <div class="progress-bar"></div>
+      </div>
+
+      <h2 class="question"></h2>
+
+      <div class="options"></div>
+
+      <button
+        class="next"
+        disabled>
+        Next →
+      </button>
+
+    </div>
+
+  </section>
+
+  <!-- RESULT -->
+  <section class="result">
+
+    <div class="card result-card">
+
+      <h2>Quiz Complete</h2>
+
+      <div class="circle">
+
+        <span class="percent">
+          0%
+        </span>
+
+      </div>
+
+      <p class="message"></p>
+
+      <button class="restart">
+        Play Again
+      </button>
+
+    </div>
+
+  </section>
+
+  <!-- Fireworks -->
+  <div id="fireworks"></div>
+
+  <!-- ThreeJS -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.min.js"></script>
+
+  <script src="script.js"></script>
+  <script src="background.js"></script>
+
 </body>
 </html>
